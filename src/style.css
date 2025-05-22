@@ -63,6 +63,7 @@ dialog::backdrop {
 
 main {
   max-width: 1200px;
+  justify-self: center;
   padding: 1rem;
 }
 
@@ -106,7 +107,7 @@ ul.notices-list {
 }
 
 li.notice-item {
-  width: 23%;
+  width: 100%;
   background-color: wheat;
   position: relative;
   padding: 1.75rem 0.5rem 0.5rem 0.5rem;
@@ -138,4 +139,16 @@ li.notice-item {
   padding: 0.2rem 0.5rem;
   top: 0;
   right: 0;
+}
+
+@media screen and (min-width: 500px) {
+  li.notice-item {
+    width: 32%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  li.notice-item {
+    width: 24%;
+  }
 }

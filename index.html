@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Bulletin board</title>
+  </head>
+  <body>
+    <header>
+      <h1>Bulletin board</h1>
+      <button type="button" id="createNoticeBtn">CREATE NOTICE</button>
+    </header>
+
+    <dialog id="createNoteDialog">
+      <form method="dialog" id="newNoteForm">
+        <textarea
+          required
+          name="noteText"
+          rows="10"
+          cols="50"
+          placeholder="Note text ..."
+          maxlength="1000"
+        ></textarea>
+        <input type="submit" id="addNoticeBtn" value="ADD" />
+      </form>
+    </dialog>
+
+    <main>
+      <section class="notices">
+        <ul id="noticesList" class="notices-list"></ul>
+      </section>
+    </main>
+    <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+@import url("./variables.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-background-color);
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  & h1 {
+    color: wheat;
+    text-shadow: 2px 0 var(--primary-background-color),
+      0 2px var(--primary-background-color),
+      2px 0 var(--primary-background-color),
+      0 -2px var(--primary-background-color);
+
+    padding: 0.75rem 1.5rem;
+  }
+
+  & button {
+    border: none;
+    outline-style: none;
+    color: wheat;
+    font-size: 1rem;
+    background-color: transparent;
+    text-shadow: 2px 0 var(--primary-background-color),
+      0 2px var(--primary-background-color),
+      2px 0 var(--primary-background-color),
+      0 -2px var(--primary-background-color);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  & button::before {
+    content: "\ff0b  ";
+  }
+
+  & button:hover {
+    background-color: rgba(46, 39, 46, 0.5);
+  }
+}
+
+dialog {
+  padding: 0.5rem;
+  justify-self: center;
+  align-self: center;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.6rem 0.6rem 1.2rem 1.2rem;
+}
+
+dialog::backdrop {
+  background-color: rgba(245, 222, 179, 0.3);
+}
+
+main {
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  & textarea {
+    border: 0;
+    border-radius: 0.6rem 0.6rem 0 0.6rem;
+
+    padding: 0.5rem;
+    background-color: wheat;
+    outline-color: wheat;
+  }
+
+  & input[type="submit"] {
+    align-self: center;
+    background-color: rgba(245, 222, 179, 0.3);
+    color: wheat;
+    border-radius: 0.4rem 0.8rem;
+    font-weight: bold;
+    text-shadow: 2px 0 var(--primary-background-color),
+      0 2px var(--primary-background-color),
+      2px 0 var(--primary-background-color),
+      0 -2px var(--primary-background-color);
+    border: none;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+ul.notices-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  list-style: none;
+}
+
+li.notice-item {
+  width: 23%;
+  background-color: wheat;
+  position: relative;
+  padding: 1.75rem 0.5rem 0.5rem 0.5rem;
+
+  & p {
+    text-indent: 1rem;
+    line-clamp: 10;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  & p::after {
+    content: "...";
+  }
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  font-size: 1.5rem;
+  color: indianred;
+  padding: 0.2rem 0.5rem;
+  top: 0;
+  right: 0;
+}

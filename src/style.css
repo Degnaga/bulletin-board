@@ -49,11 +49,12 @@ header {
 }
 
 dialog {
-  padding: 0.5rem;
-  justify-self: center;
+  padding: 0.75rem 0.5rem;
   align-self: center;
+  justify-self: center;
+  justify-items: center;
   border: none;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(44, 9, 9, 0.7);
   border-radius: 0.6rem 0.6rem 1.2rem 1.2rem;
 }
 
@@ -61,17 +62,23 @@ dialog::backdrop {
   background-color: rgba(245, 222, 179, 0.3);
 }
 
-main {
-  max-width: 1200px;
-  justify-self: center;
-  padding: 1rem;
+p.form-message {
+  padding: 0.5rem;
+  color: transparent;
 }
 
-form {
+p.form-message-error {
+  padding: 0.5rem;
+  color: indianred;
+}
+
+form.notice-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   & textarea {
+    width: 100%;
     border: 0;
     border-radius: 0.6rem 0.6rem 0 0.6rem;
 
@@ -79,22 +86,32 @@ form {
     background-color: wheat;
     outline-color: wheat;
   }
+}
 
-  & input[type="submit"] {
-    align-self: center;
+div.notice-form-buttons {
+  display: flex;
+  margin-top: 1rem;
+  gap: 1rem;
+
+  & input[type="submit"],
+  button {
     background-color: rgba(245, 222, 179, 0.3);
     color: wheat;
-    border-radius: 0.4rem 0.8rem;
+    border-radius: 0.4rem;
     font-weight: bold;
-    text-shadow: 2px 0 var(--primary-background-color),
-      0 2px var(--primary-background-color),
-      2px 0 var(--primary-background-color),
-      0 -2px var(--primary-background-color);
+    text-shadow: 2px 4px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 2px;
     border: none;
-    margin-top: 0.5rem;
+
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
   }
+}
+
+main {
+  max-width: 1200px;
+  justify-self: center;
+  padding: 1rem;
 }
 
 ul.notices-list {
@@ -107,7 +124,7 @@ ul.notices-list {
 }
 
 li.notice-item {
-  width: 100%;
+  width: 70dvw;
   background-color: wheat;
   position: relative;
   padding: 1.75rem 0.5rem 0.5rem 0.5rem;
@@ -131,24 +148,38 @@ li.notice-item {
   user-select: none;
 }
 
-.close-btn {
+.delete-btn,
+.edit-btn {
   cursor: pointer;
   position: absolute;
-  font-size: 1.5rem;
-  color: indianred;
-  padding: 0.2rem 0.5rem;
   top: 0;
+  font-size: 1.5rem;
+}
+
+.delete-btn {
+  color: indianred;
   right: 0;
+  padding: 0 0.5rem;
+}
+.edit-btn {
+  color: rgba(44, 9, 9, 0.7);
+  right: left;
 }
 
 @media screen and (min-width: 500px) {
   li.notice-item {
-    width: 32%;
+    width: 42dvw;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  li.notice-item {
+    width: 30dvw;
   }
 }
 
 @media screen and (min-width: 1000px) {
   li.notice-item {
-    width: 24%;
+    width: 20dvw;
   }
 }

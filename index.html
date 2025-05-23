@@ -12,21 +12,53 @@
       <h1>Bulletin board</h1>
       <button type="button" id="createNoticeBtn">CREATE NOTICE</button>
     </header>
-
-    <dialog id="createNoteDialog">
-      <form method="dialog" id="newNoteForm">
+    <dialog id="createNoticeDialog">
+      <form method="dialog" id="newNoticeForm" class="notice-form">
         <textarea
-          required
-          name="noteText"
+          name="noticeNewText"
           rows="10"
           cols="50"
-          placeholder="Note text ..."
+          placeholder="Notice text ..."
           maxlength="1000"
         ></textarea>
-        <input type="submit" id="addNoticeBtn" value="ADD" />
+      </form>
+      <div class="notice-form-buttons">
+        <input
+          type="submit"
+          form="newNoticeForm"
+          id="addNoticeBtn"
+          value="ADD"
+        />
+        <button type="button" id="cancelNewNoticeBtn">CANCEL</button>
+      </div>
+      <p id="newNoticeFormError" class="form-message">
+        This field cannot be empty.
+      </p>
+    </dialog>
+    <dialog id="editNoticeDialog">
+      <form method="dialog" id="editNoticeForm" class="notice-form">
+        <textarea
+          required
+          name="noticeEditedText"
+          rows="10"
+          cols="50"
+          placeholder="Notice text ..."
+          maxlength="1000"
+        ></textarea>
+        <div class="notice-form-buttons">
+          <input
+            type="submit"
+            form="editNoticeForm"
+            id="saveNoticeBtn"
+            value="SAVE"
+          />
+          <button type="button" id="cancelEditNoticeBtn">CANCEL</button>
+        </div>
+        <p id="newNoticeFormError" class="form-message">
+          This field cannot be empty.
+        </p>
       </form>
     </dialog>
-
     <main>
       <section class="notices">
         <ul id="noticesList" class="notices-list"></ul>
